@@ -2,10 +2,10 @@ kubectl get pods --selector env=dev
 
 kubectl get all --selector env=prod
 
-# add a label to a node - only works for a simple case
+// add a label to a node - only works for a simple case
 kubectl label nodes node01 size=large
 
-# add to pod definition
+// add to pod definition
 apiVersion:
 kind: Pod
 metadata:
@@ -17,7 +17,7 @@ spec:
   nodeSelector:
     size: large
 
-# node affinity for more complex cases - replace nodeSelector element with:
+// node affinity for more complex cases - replace nodeSelector element with:
 
   affinity:
     nodeAffinity:
