@@ -18,7 +18,7 @@ spec:
     size: large
 
 // node affinity for more complex cases - replace nodeSelector element with:
-<as previous>
+
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
