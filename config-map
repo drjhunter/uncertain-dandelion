@@ -1,0 +1,38 @@
+# imperative
+
+kubectl create config-map \
+  app-config --from-literal=APP_COLOR=blue --from-literal=APP_SIZE=5
+
+kubectl create config-map \
+  app-config --from-file=myfile.properties
+
+
+
+# declarative
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_COLOR: blue
+  APP_SIZE: 5
+
+
+# add to container properties - all the properties
+
+    envFrom:
+    - configMapRef:
+      name: app-config
+
+# or just one property
+
+    env:
+    - name: APP_COLOR
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: APP_COLOR:q!
+
+
+  
