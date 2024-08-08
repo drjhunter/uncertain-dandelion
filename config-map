@@ -23,7 +23,7 @@ data:
 
     envFrom:
     - configMapRef:
-      name: app-config
+        name: app-config
 
 # or just one property
 
